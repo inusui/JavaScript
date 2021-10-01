@@ -8,3 +8,4 @@ class Persona {
 let persona1 = new Persona('Juan', 'Perez'); //Reservar espacio para crear objeto Persona, se le llama instancia de clase o objeto, llama al constructor de la clase. 
 
 console.log (persona1);
+
