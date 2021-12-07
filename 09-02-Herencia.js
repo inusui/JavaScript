@@ -1,3 +1,5 @@
+
+
 class Persona { //Clase Padre 
     constructor(nombre , apellido){
         this._nombre = nombre; 
@@ -20,6 +22,14 @@ class Persona { //Clase Padre
     nombreCompleto(){//dentro de una clase no es necesario una funcion 
         return this._nombre + " " + this._apellido;
         
+    }
+    //Sobre escribiendo el metodo de la clase padre (Object)
+    toString(){
+        //Se aplica polimorfismo -> Multiples formas en tiempo de ejecucion 
+        //el metodo que se ejecuta depende si es una referencia de tipo padre o de tipo hijo 
+        //Importante para reutilizar codigo 
+        return this.nombreCompleto(); //Se reutiliza el codigo del metodo nombreCompleto(), se hace una sola llamada
+
     }
 }//Clase de Tipo Persona
 
@@ -46,9 +56,10 @@ class Empleado extends Persona{
 }
 
 let persona1 = new Persona("juan", "fernandez");
-console.log(persona1);
+console.log(persona1.toString());
 
 let empleado1 = new Empleado("Maria", "Jimenez", "Finanzas");
 console.log (empleado1.nombreCompleto());
 
 
+console.log(empleado1.toString());//Sobre escribir el metodo object
