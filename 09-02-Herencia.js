@@ -31,6 +31,12 @@ class Persona { //Clase Padre
         return this.nombreCompleto(); //Se reutiliza el codigo del metodo nombreCompleto(), se hace una sola llamada
 
     }
+    static saludar (){
+        console.log("Hola");
+    }
+    static saludar2 (persona){
+        console.log(persona.nombre);
+    }
 }//Clase de Tipo Persona
 
 class Empleado extends Persona{
@@ -63,3 +69,9 @@ console.log (empleado1.nombreCompleto());
 
 
 console.log(empleado1.toString());//Sobre escribir el metodo object
+
+//persona1.saludar(); no es posible llamar un metodo static desde un objeto
+
+Persona.saludar(); //llamando a la clase Persona
+
+Persona.saludar2(persona1); 

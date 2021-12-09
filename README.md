@@ -86,3 +86,12 @@ Dependiendo del objeto que estemos apuntando el codigo se comporta de manera un 
 
 El metodo se ejcuta dependiendo si hace referencia a la clase padre o al hijo. 
 _Es importante para reutilziar codigo._
+
+### Static
+se asocia con una clase pero no con sus metodos. 
+
+la llamada a un metodo static se observa en consola. 
+
+el metodo corre desde la clase no desde la llamada del metodo. 
+
+Se puede acceder desde las clases hijas. 
