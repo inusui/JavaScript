@@ -1,14 +1,23 @@
 class Persona { //Clase Padre 
 
-    static contadorObjetosPersona = 0; //atributo de nuestra clase Persona
+    static contadorPersona = 0; //atributo de nuestra clase Persona
 
-    email = 'ejemplo@mail.com';//Atributo de nuestros objetos
+    static get MAX_Objetos(){
+        return 3;//solo se pueden hacer hasta 5 objetos
+    }
 
     constructor(nombre , apellido){
         this._nombre = nombre; 
         this._apellido = apellido;
-        Persona.contadorObjetosPersona++;
-        
+        if (Persona.contadorPersona < Persona.MAX_Objetos){
+          
+          this.idPersona = ++Persona.contadorPersona; //Primero incrementa y luego asigna el valor
+
+        }else{
+            console.log("Se ha alcanzado el numero maximo de objetos permitidos");
+        }
+
+
     }
 
     get nombre (){ 
@@ -25,7 +34,7 @@ class Persona { //Clase Padre
         this._apellido = this.apellido;
     }
     nombreCompleto(){//dentro de una clase no es necesario una funcion 
-        return this._nombre + " " + this._apellido;
+        return this.idPersona + " " +  this._nombre + " " + this._apellido;
         
     }
     //Sobre escribiendo el metodo de la clase padre (Object)
@@ -68,31 +77,21 @@ class Empleado extends Persona{
 }
 
 let persona1 = new Persona("Juan", "fernandez");
-console.log(persona1.toString());
+
+console.log(persona1.toString())
 
 let empleado1 = new Empleado("Maria", "Jimenez", "Finanzas");
-console.log (empleado1.nombreCompleto());
+console.log(empleado1.toString()); 
 
+console.log(Persona.contadorPersona);
 
-console.log(empleado1.toString());//Sobre escribir el metodo object
+console.log(Persona.MAX_Objetos);
 
-//persona1.saludar(); no es posible llamar un metodo static desde un objeto
+Persona.MAX_Objetos = 10;
+console.log(Persona.MAX_Objetos);
 
-Persona.saludar(); //llamando a la clase Persona
+let empleado2 = new Empleado("Maria", "Jimenez", "Finanzas");
 
-Persona.saludar2(persona1); 
+let empleado3 = new Empleado("Maria", "Jimenez", "Finanzas");
 
-Empleado.saludar2(empleado1);
-
-//Variable nueva en el objeto persona1, por lo tanto es indefinido.
-console.log (persona1.contadorObjetosPersona)
-//al usar el metodo Persona lo cual si esta asociado al metodo estatico. "corre"
-console.log(Persona.contadorObjetosPersona)
-
-//desde la clase hija
-console.log(Empleado.contadorObjetosPersona); //las hijas tambien heredan las static. 
-
-console.log(persona1.email ," |ahora desde la clase hija " ,  empleado1.email)
-
-console.log(Persona.email);
-
+console.log(empleado3.toString());

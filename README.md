@@ -94,4 +94,62 @@ la llamada a un metodo static se observa en consola.
 
 el metodo corre desde la clase no desde la llamada del metodo. 
 
-Se puede acceder desde las clases hijas. 
+Se puede acceder desde las clases hijas.
+
+Se asocian con la clase 
+
+```js
+class Persona {
+    static contadorObjetosPersona = 0; //Atributo Static 
+
+    constructor(){
+        Persona.contadorObjetosPersona ++;
+        //Persona (clase).contadorObjetosPersona (Atributo asociado a ella)
+    }
+}
+```
+
+## Atributos no Statics
+
+Son todos los atributos de nuestros metodos no staticos. 
+
+Hay un metodo para crear atributos los cuales no estan asociadas a ningun metodo. 
+
+```js
+
+console.log(persona1.email ," |ahora desde la clase hija " ,  empleado1.email);
+//Accede al atributo fuera de los metodos dentro de la clase. 
+
+console.log(Persona.email);
+//Indefinido
+```
+Si se intenta acceder al atributo noStatic desde la Clase dropeara un indefinido ya que no tiene "datos" que mostrar al no estar "declarado" con ningun Objeto/Metodo
+
+## Variable de tipo Static que no queremos que se modifique. 
+<h6>Variable que solo puede leer</h6>
+no es una variable es una llamada al metodo static. 
+
+```js
+static get MAX_Objetos(){
+        return 5;//solo se pueden ahcer 5 objetos
+    }
+```
+
+_Si se usa get o set no es necesario el poner los ()_
+```js
+console.log(Persona.MAX_Objetos);
+```
+<h4> No se le puede asignar nada </h4>
+Como no agregamos el metodo _set_ en la clase la variable ```Max_Objetos``` no puede cambiar
+
+```js
+console.log(Persona.MAX_Objetos);
+//Output > 5
+
+Persona.MAX_Objetos = 10;
+console.log(Persona.MAX_Objetos);
+//Output > 5
+```
+
+
+
