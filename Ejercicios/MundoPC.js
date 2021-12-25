@@ -104,7 +104,7 @@ class Computadora{
         this._nombre = nombre
 
     }
-    
+
     toString(){
         return`Computadora: ${this._idComputadoras}
         Nombre: ${this._nombre}
@@ -123,17 +123,22 @@ class Orden{
         this._computadoras = Computadora = [];
 
     }
+
+    get idOrden(){
+        return this._idOrden;
+    }
+
     agregarComputadora(computadora){
         this._computadoras.push(computadora)
     }
     mostrarOrden(){
-        let computadoraOrden = " ";
+        let computadoraOrden = "";
         for (let computadora of this._computadora){
-            computadoraOrden += computadora.toString() + " ";
+            computadoraOrden += `\n${computadora}`;
         }
 
         return `Orden N°${this._idOrden}
-        Computadora: ${computadoraOrden}`
+        Computadora: ${computadoraOrden}`;
     }
 }
 let orden1 = new Orden();
