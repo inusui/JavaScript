@@ -5,76 +5,84 @@ class Persona{
         this._nombre = nombre;
         this._apellido = apellido;
         this._edad = edad;
-        this.idPersona = ++Persona.contadorPersona;
+        this._idPersona = ++Persona.contadorPersona;
     }
 
-    get IdPersona(){
+    get idPersona(){
         return this._idPersona;
     }
-    get Nombre(){
+    get nombre(){
         return this._nombre;
 
     }
-    set Nombre(nombre){
+    set nombre(nombre){
         this._nombre = nombre;
     }
-    get Apellido(){
+    get apellido(){
         return this._apellido;
 
     }
-    set Apellido(apellido){
+    set apellido(apellido){
         this._apellido = apellido;
     }
-    get Edad(){
+    get edad(){
         return this._edad;
 
     }
-    set Edad(edad){
+    set edad(edad){
         this._edad = edad;
     }
     toString(){
-        return "Id Persona: " + this.idPersona + " Nombre: " + this._nombre + " " + this._apellido + " Edad: " + this._edad
+        return `Id Persona: ${this.idPersona} 
+        Nombre: ${this._nombre} ${this._apellido} 
+        Edad: ${this._edad}`
     }
 }
 
 class Empleado extends Persona{
+
     constructor(nombre, apellido, edad, sueldo){
         super(nombre, apellido, edad);
         this._sueldo = sueldo;
     }
 
-    get IdEmpleado(){
+    get idEmpleado(){
         return this.idPersona;
     }
-    get Sueldo(){
+
+    get sueldo(){
         return this._sueldo;
     }
-    set Sueldo (sueldo){
+    set sueldo (sueldo){
         this.sueldo = sueldo;
     }
+
     toString(){
-        return super.toString() + ", Su sueldo es de: " + this._sueldo +" Dolares Quincenales"
+        return `${super.toString()}
+        Su sueldo es de: ${this._sueldo} Dolares Quincenales`;
     }
 
 }
 
 class Cliente extends Persona{
+
     constructor(nombre, apellido, edad){
         super(nombre, apellido, edad);
         this._fechaRegistro = new Date();
     }
 
-    get IdCliente(){
+    get idCliente(){
         return this._idPersona;
     }
-    set FechaRegistro(fechaRegistro){
+    set fechaRegistro(fechaRegistro){
         this._fechaRegistro = fechaRegistro;
     }
-    get FechaRegistro(){
+    get fechaRegistro(){
         return this._fechaRegistro;
     }
     toString(){
-        return super.toString() + ", Se Registro el: " + this._fechaRegistro 
+        return `${super.toString()}
+        Se Registro el: ${this._fechaRegistro}`;
     }
 
 }
@@ -86,5 +94,5 @@ console.log(persona1.toString());
 let cliente1 = new Cliente ("Jeniffer", "Saavedra", 24);
 console.log(cliente1.toString());
 
-let empleado1 = new Empleado("Luna", "Moreno", "Canino", 250);
+let empleado1 = new Empleado("Luna", "Moreno", 5, 250);
 console.log(empleado1.toString())

@@ -14,6 +14,9 @@ nombreCompleto(){//dentro de una clase no es necesario una funcion
     }
 }
 ```
+* Si estas dentro de la misma carpeta puedes ```extends``` sin tener que importar o algo asi. 
+
+Por ejemplo: dentro de la capeta "clases" tienes un documento que tiene la clase Persona y en otro documento la Clase Cliente que ```extends``` de Persona. Se puede!
 
 ### Sobreescritura
 Modifica el comportamiento de la clase padre
@@ -151,5 +154,11 @@ console.log(Persona.MAX_Objetos);
 //Output > 5
 ```
 
+
+## Date()
+establece la fecha actual
+```js
+new Date();
+```
 
 
