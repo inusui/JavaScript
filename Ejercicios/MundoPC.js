@@ -22,7 +22,7 @@ class DispositivoEntrada{
 
 
 class Raton extends DispositivoEntrada{
-    static contadorRatones = 0
+    static contadorRatones = 0;
 
     constructor(tipoEntrada, marca){
         super (tipoEntrada, marca)
@@ -42,7 +42,7 @@ let raton1 = new Raton("USB", "RedDragon");
 console.log(raton1.toString())
 
 class Teclado extends DispositivoEntrada{
-    static contadorTeclado = 0
+    static contadorTeclado = 0;
 
     constructor(tipoEntrada, marca){
         super (tipoEntrada, marca)
@@ -59,7 +59,7 @@ class Teclado extends DispositivoEntrada{
 
 }
 let teclado1 = new Teclado("USB", "RedDragon");
-console.log(teclado1.toString())
+console.log(teclado1.toString());
 
 class Monitor{
     static contadorMonitores = 0;
@@ -104,34 +104,7 @@ class Computadora{
         this._nombre = nombre
 
     }
-    get monitor(){
-        return this._monitor;
-    }
-    set monitor(monitor){
-        this._monitor = monitor;
-    }
-
-    get raton(){
-        return this._raton;
-    }
-    set raton(raton){
-        this._raton = raton;
-    }
-
-    get teclado(){
-        return this._teclado;
-    }
-    set teclado(teclado){
-        this._teclado = teclado;
-    }
-
-    get nombre(){
-        return this._nombre;
-    }
-    set nombre(nombre){
-        this._nombre = nombre
-    }
-
+    
     toString(){
         return`Computadora: ${this._idComputadoras}
         Nombre: ${this._nombre}
@@ -140,7 +113,7 @@ class Computadora{
         Raton ${this._raton}`
     }
 }
-let computadora1 = new Computadora("Asus", monitor1,teclado1, raton1);
+let computadora1 = new Computadora("Asus", monitor1, teclado1, raton1);
 console.log(computadora1.toString());
 
 class Orden{
