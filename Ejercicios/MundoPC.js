@@ -119,8 +119,8 @@ console.log(computadora1.toString());
 class Orden{
     static contadorOrdenes = 0;
     constructor(){
-        this._idOrden = ++Orden.contadorComputadoras;
-        this._computadoras = Computadora = [];
+        this._idOrden = ++Orden.contadorOrdenes;
+        this._computadoras = [];
 
     }
 
@@ -133,13 +133,16 @@ class Orden{
     }
     mostrarOrden(){
         let computadoraOrden = "";
-        for (let computadora of this._computadora){
+        for (let computadora of this._computadoras){
             computadoraOrden += `\n${computadora}`;
         }
 
-        return `Orden N°${this._idOrden}
-        Computadora: ${computadoraOrden}`;
+        console.log( `Orden N°${this._idOrden}
+        ${computadoraOrden}`);
     }
 }
 let orden1 = new Orden();
-orden1.mostrarOrden;
+orden1.agregarComputadora(computadora1);
+orden1.agregarComputadora(computadora1);
+
+orden1.mostrarOrden();
