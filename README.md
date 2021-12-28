@@ -162,3 +162,22 @@ new Date();
 ```
 
 
+## Strict
+Usar strict es recomendable en proyectos grandes.
+Debe ser usada en la primera linea de codigo o en la primera linea dentro de una funcion. 
+es usada para enviar un error en caso que una variable no este declarada ``` let ``` ``` var ```
+su uso seria con
+```js
+"use strict"; 
+```
+ejemplo: 
+```js
+"use strict";
+
+x = 10;
+
+console.log(x);
+```
+en la linea de ``` x = 10; ``` manda un error, _x no esta definida_ solo hasta que le ante ponga un let o un var va a correr correctamente. 
+
+* Al parecer no se puede correr dentro de una class. 
