@@ -57,3 +57,32 @@ imprimir(gerente1); //Gerente: Empleado:         Nombre: Carlos, Sueldo: $500 
 ``` 
 
 ## Instance of
+_Intancia de_
+Se una cuando necesitamos comparar o determinar en que instancia esta el tipo de objeto que queremos usar
+
+```js
+if (tipo instanceof Empleado){
+        console.log ("es un objeto de tipo empleado")
+    }
+```
+Se recomienda poner la clase de menos Jerarquia 
+
+* Puede acceder a la Herencia. 
+Cuando pedimos la instancai para tipo Empleado, nos manda 2. la de Gerente y la de empleado. 
+Esto es porque Gerente extiende de Empleado. 
+```js
+if (tipo instanceof Empleado){
+        console.log("Es de Tipo Empleado. ")
+    }
+```
+
+En caso tal no queremos que nos envie ambas salidas simplemente usamos ``` else if ```
+```js
+ else if (tipo instanceof Empleado){
+        console.log("Es de Tipo Empleado. ")
+    }
+    else if (tipo instanceof Object){
+        console.log("Es de tipo Object.")
+    }
+```
+* Puede acceder a la clase Object (clase padre de todas las clases.)
