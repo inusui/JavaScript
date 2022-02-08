@@ -16,3 +16,6 @@ catch(error){
 }
 ```
 _Output: [ReferenceError: x is not defined]_
+
+## Throws
+Excepcion 
