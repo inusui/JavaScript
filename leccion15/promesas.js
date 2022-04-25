@@ -31,4 +31,32 @@ let promesa = new Promise((resolver) => {
 async function miFuncionConPromesa (){
     return 'hola dentro de async';
 }
-miFuncionConPromesa().then (valor => console.log(valor));
+//miFuncionConPromesa().then (valor => console.log(valor));
+
+// Palabra Reservada Await y Async 
+// Await es para esperar. 
+
+//Ejempl Async con await
+
+async function funcionconpromesayAwait(){
+    let miPromesa = new Promise(resolver => {
+        resolver('Promesa con await')
+    });
+    //la respuesta de la prmesa
+
+    console.log(await miPromesa );//no es necesario procesarlo con then
+}
+//funcionconpromesayAwait();
+// Se puede usar en la misma funcion async
+
+
+//! promesas, async, awaut y settimeout
+
+async function funcionPromesasAwaitySetTimeout(){
+    let miPromesa = new Promise(resolver =>{
+        setTimeout(()=> resolver('Promesa con await y timeout'), 3000);
+    });
+    console.log(await miPromesa);
+}
+funcionPromesasAwaitySetTimeout();
+// Es necesatio una funcion async para poner utilizar await. 
